@@ -1,0 +1,67 @@
+body{
+	background: url(fundo.png) no-repeat;
+	background-attachment: fixed;
+}
+
+.mv-auto{
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+form .btn{
+	font-size: 80%;
+	border-radius: 5rem;
+	letter-spacing: 0.1rem;
+	font-weight: bold;
+	padding: 0.4rem;
+}
+
+.card-key{
+	width: 21rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn-login{
+	width: 21rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.form-group input{
+	height: auto;
+	border-radius: 2rem;
+	border-color: white;
+	border-width: 0.2rem;
+	background: transparent;
+	align-items: center;
+}
+
+@-webkit-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; } 
+}
+@-moz-keyframes fadeIn {
+0% { opacity: 0;}
+100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fadeIn {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+
+.fadeIn {
+-webkit-animation: fadeIn 0.5s ease-in-out;
+-moz-animation: fadeIn 0.5s ease-in-out;
+-o-animation: fadeIn 0.5s ease-in-out;
+animation: fadeIn 0.5s ease-in-out;
+}
+
+.card{
+	border-color: transparent;
+}

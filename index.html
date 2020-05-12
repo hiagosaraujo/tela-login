@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faça seu login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<style>
+		div.a {
+			text-align: center;
+		}
+	</style>
+	<div class="container">
+		<div class="row mv-auto">
+			<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
+				<div class="card text-white bg-transparent fadeIn">
+					<div class="card-body">
+						<div class="card-title text-center">
+							<img src="republic2.png" width="250">
+						</div>
+						<form method="POST" id="login">
+							<div class="form-group">
+								<input type="email" name="email" class="form-control text-center card-key" placeholder="digite seu email">
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" class="form-control text-center card-key" placeholder="digite sua senha">
+							</div>
+							<div class="form-group mt-1 mb-2 text-center">
+								<a href="forgot-password.html">Esqueci minha senha</a>
+							</div>
+							<div class="form-group">
+								<div class="form-check text-center">
+									<input type="checkbox" name="remember" value="" class="form-check-input">
+									<label class="form-check-label">Lembre-me</label>
+								</div>
+							</div>
+							<a class="btn btn-login bg-success btn-block text-uppercase text-white" href="login-success.html" role="button">Login</a>
+							<div class="a mt-2">
+								<h6>Não é cadastrado ainda?</h6>
+							<a class="btn btn-primary text-uppercase text-center text-white mb-2 mt-1" href="register.html" role="button">Cadastre-se</a>
+								<h6>Siga-nos em nossas redes sociais</h6>
+							<a href="https://www.facebook.com/republicloungebarce/" target="_blank"><img src="facebook.png" class="media-object  img-responsive mr-2 ml-2"></a>
+							<a href="https://www.instagram.com/republic_barebistro/" target="_blank"><img src="instagram.png" class="media-object img-responsive mr-2 ml-2"></a>
+							<a href="https://www.twitter.com.br" target="_blank"><img src="twitter.png" class="media-object  img-responsive mr-2 ml-2"></a>
+							</div>
+						</form>
+					</div>
+				</di>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		loginFill()
+		function loginFill(){
+			var email = window.localStorage.getItem('email')
+			var pass = window.localStorage.getItem('pass')
+			if (email == undefined || pass == undefined){
+				return;
+			}
+
+			document.querySelector('[name=email]').value = email
+			document.querySelector('[name=password]').value = pass
+		}
+
+		document.querySelector("#login").addEventListener('submit', function(form){
+			form.preventDefault()
+			var check = form.target.remember.checked
+			if (check == false) {
+				window.localStorage.removeItem('email',email)
+				window.localStorage.setItem('pass',pass)
+
+				form.submit()
+				return;
+			}
+
+			var email = form.target.email.value
+			var pass = form.target.password.value
+			window.localStorage.setItem('email',email)
+			window.localStorage.setItem('pass',pass)
+
+			form.submit()
+
+			// console.log(email,check)
+		})
+	</script>
+	<script src="https://kit.fontawesome.com/650ffd4596.js" crossorigin="anonymous"></script>
+</body>
+</html>
